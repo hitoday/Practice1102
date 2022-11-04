@@ -2,6 +2,7 @@ package com.example.Practice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -24,7 +25,12 @@ public class CrudController {
 
     @PostMapping("/Crud/Insert")
     public String insertReview(CrudEntity crudEntity){
-        crudEntity.setCreatedDate(LocalDateTime.now());
+        crudService.insertReview(crudEntity);
         return "Crud/List";
     }
+
+//    @GetMapping("/Curd/List")
+//    public void List(Model model){
+//        model.addAttribute("List", list)
+//    }
 }

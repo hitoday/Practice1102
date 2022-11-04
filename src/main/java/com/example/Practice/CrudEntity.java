@@ -1,25 +1,26 @@
 package com.example.Practice;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class CrudEntity extends Basetime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    private Long seq;
+    private Long crudSeq;
 
-    @Column
-    private String title;
 
-    @Column
-    private String contents;
+    private String crudtitle;
 
-    @Column
-    private String writer;
+
+    private String crudcontents;
+
+
+    private String crudwriter;
 
 }

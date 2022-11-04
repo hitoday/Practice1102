@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>INSERT</title>
 </head>
 <body>
     <h3>게시판 등록 PAGE</h3>
+    <form th:action="@{/Crud/Insert}" method="post">
+        <div>
+            <p>제목</p>
+            <input type="text" name="crudtitle" placeholder="제목을 입력하세요" aria-label="제목을 입력하세요">
+        </div>
+        <div>
+            <p>내용</p>
+            <input type="text" name="crudcontents" placeholder="내용을 입력하세요" aria-label="내용을 입력하세요">
+        </div>
+        <div>
+            <p>작성자</p>
+            <input type="text" name="crudwriter" placeholder="작성자를 입력하세요">
+        </div>
 
-<div>
+        <button type="submit">글 등록</button>
+    </form>
+<a th:href="@{/Crud/List}">돌아가기</a>
 
 </body>
 </html>
